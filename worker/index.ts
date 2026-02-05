@@ -324,9 +324,10 @@ async function handleListConversations(env: Env, workspaceId: string) {
 }
 
 async function handleListMessages(env: Env, workspaceId: string, conversationId: string, url: URL) {
-  const limit = Math.min(Math.max(Number(url.searchParams.get('limit') ?? '100'), 1), 200)
-  const beforeRaw = url.searchParams.get('before')
-  const before = beforeRaw ? Number(beforeRaw) : null
+  const limitRaw = Number(url.searchParams.get('limit') ?? '100')
+  const limit = Number.isFinite(limitRaw) ? Math.min(Math.max(limitRaw, 1), 200) : 100
+  const beforeRaw = Number(url.searchParams.get('before') ?? '')
+  const before = Number.isFinite(beforeRaw) ? beforeRaw : null
 
   let stmt
   if (before) {
