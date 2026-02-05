@@ -1,0 +1,5 @@
+# Local development overrides for wrangler dev
+APP_WORKSPACE_CODE=simply
+APP_SHARED_PIN=123456
+SESSION_SECRET=replace_with_long_random_string
+DEV_MODE=true

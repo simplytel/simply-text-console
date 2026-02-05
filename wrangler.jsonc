@@ -1,0 +1,43 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "simply-text-console",
+	"main": "worker/index.ts",
+	"compatibility_date": "2026-02-05",
+	"assets": {
+		"directory": "apps/web/dist/client",
+		"not_found_handling": "single-page-application"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"compatibility_flags": ["nodejs_compat"],
+	"vars": {
+		"DEV_MODE": "false",
+		"APP_WORKSPACE_CODE": "simply"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "simply-text-console",
+			"database_id": "REPLACE_WITH_D1_DATABASE_ID"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "CHATHUB",
+				"class_name": "ChatHub"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_classes": ["ChatHub"]
+		}
+	]
+}
