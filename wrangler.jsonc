@@ -23,7 +23,8 @@
 		{
 			"binding": "DB",
 			"database_name": "simply-text-console",
-			"database_id": "REPLACE_WITH_D1_DATABASE_ID"
+			"database_id": "REPLACE_WITH_D1_DATABASE_ID",
+			"migrations_dir": "db/migrations"
 		}
 	],
 	"durable_objects": {

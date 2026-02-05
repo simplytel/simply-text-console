@@ -140,6 +140,10 @@ async function handleApi(request: Request, env: Env) {
     return handleLogin(request, env)
   }
 
+  if (pathname === '/api/health' && request.method === 'GET') {
+    return json({ ok: true, time: Date.now() })
+  }
+
   if (pathname === '/api/logout' && request.method === 'POST') {
     return handleLogout(request)
   }
