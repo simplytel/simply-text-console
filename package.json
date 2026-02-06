@@ -13,8 +13,8 @@
 		"typecheck": "tsc -b",
 		"lint": "eslint .",
 		"test": "npm run typecheck",
-		"d1:migrate:local": "wrangler d1 migrations apply DB --local",
-		"d1:migrate:remote": "wrangler d1 migrations apply DB"
+		"d1:migrate:local": "wrangler d1 migrations apply DB",
+		"d1:migrate:remote": "wrangler d1 migrations apply DB --remote"
 	},
 	"dependencies": {
 		"react": "^19.1.1",

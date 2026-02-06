@@ -24,8 +24,11 @@ dist-ssr
 *.sw?
 
 # wrangler files
-.wrangler
-.dev.vars*
+.wrangler/
+.dev.vars
+.dev.vars.*
 !.dev.vars.example
-.env*
+.env
+.env.*
 !.env.example
+.last_deploy_url

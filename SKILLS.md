@@ -3,6 +3,9 @@
 **Local Dev**
 - Install deps: `npm install`
 - Copy dev vars: `cp .dev.vars.example .dev.vars`
+- Add secrets locally in `.dev.vars` (gitignored):
+- `APP_SHARED_PIN=123456`
+- `SESSION_SECRET=dev-only-session-secret-change-me`
 - Run app: `npm run dev`
 - Open `http://localhost:5173` (Vite will proxy API calls to the Worker)
 
@@ -14,8 +17,10 @@
 
 **Deploy**
 - Build + deploy: `npm run deploy`
-- Set secrets: `wrangler secret put APP_SHARED_PIN` and `wrangler secret put SESSION_SECRET`
+- Use OAuth login for local work: `wrangler login` (no API tokens needed)
+- Set secrets in prod: `wrangler secret put APP_SHARED_PIN` and `wrangler secret put SESSION_SECRET`
 - Optionally override `APP_WORKSPACE_CODE` via `wrangler.toml` or `wrangler.jsonc` vars
+- For CI later: use a Cloudflare API token in GitHub Secrets as `CLOUDFLARE_API_TOKEN`, optionally `CLOUDFLARE_ACCOUNT_ID` (never commit tokens).
 
 **Test Realtime Quickly**
 - Open two tabs at `/app` and log in with the same workspace.

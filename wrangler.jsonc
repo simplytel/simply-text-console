@@ -5,6 +5,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "simply-text-console",
+	"account_id": "c6ba3141b72e71596ab087c9942a14ec",
 	"main": "worker/index.ts",
 	"compatibility_date": "2026-02-05",
 	"assets": {
