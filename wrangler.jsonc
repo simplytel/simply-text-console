@@ -24,7 +24,7 @@
 		{
 			"binding": "DB",
 			"database_name": "simply-text-console",
-			"database_id": "REPLACE_WITH_D1_DATABASE_ID",
+			"database_id": "e0fee993-4c36-4225-b5e9-72301c5e1c52",
 			"migrations_dir": "db/migrations"
 		}
 	],
@@ -39,7 +39,7 @@
 	"migrations": [
 		{
 			"tag": "v1",
-			"new_classes": ["ChatHub"]
+			"new_sqlite_classes": ["ChatHub"]
 		}
 	]
 }
